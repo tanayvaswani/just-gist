@@ -6,6 +6,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 
+app.use(express.json());
+
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({
     message: "Health check - OK!",
